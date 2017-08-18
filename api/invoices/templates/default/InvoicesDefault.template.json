@@ -1,0 +1,20 @@
+{
+  "default": {
+    "attributes": {
+      "profitCenter": {},
+      "customerName": {
+        "required": true
+      },
+      "invoiceNumber": {
+        "required": true
+      },
+      "currency": {},
+      "amount": {},
+      "description": {},
+      "date": {
+        "required": true
+      }
+    },
+    "displayedAttribute": "profitcenter"
+  }
+}

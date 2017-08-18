@@ -1,0 +1,57 @@
+{
+  "routes": {
+    "GET /invoices": {
+      "controller": "Invoices",
+      "action": "find",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "GET /invoices/:id": {
+      "controller": "Invoices",
+      "action": "findOne",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /invoices": {
+      "controller": "Invoices",
+      "action": "create",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "PUT /invoices/:id": {
+      "controller": "Invoices",
+      "action": "update",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    },
+    "DELETE /invoices/:id": {
+      "controller": "Invoices",
+      "action": "destroy",
+      "policies": [
+        "isAuthorized"
+      ]
+    },
+    "POST /invoices/:parentId/:relation": {
+      "controller": "Invoices",
+      "action": "add",
+      "policies": [
+        "isAuthorized",
+        "addDataCreate"
+      ]
+    },
+    "DELETE /invoices/:parentId/:relation/:id": {
+      "controller": "Invoices",
+      "action": "remove",
+      "policies": [
+        "isAuthorized",
+        "addDataUpdate"
+      ]
+    }
+  }
+}
