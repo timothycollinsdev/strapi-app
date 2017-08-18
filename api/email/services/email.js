@@ -16,15 +16,15 @@ var exp = {
           secure: false, // use SSL
           port: 587, // port for secure SMTP
           auth: {
-              user: "neo.xactor@outlook.com",
-              pass: "***REMOVED***"
+              user: "<email username>",
+              pass: "<email password>"
           }
         }
       );
       if(options.length <= 0) reject("You need to have one recipent! none found")
       options.forEach(option=>{
         let mailOptions = {
-            from: '"Shahid Kamal 👻" <neo.xactor@outlook.com>', // sender address
+            from: '"Shahid Kamal 👻" <neo.xactor@outlook.com>', // sender address if initialized through custom smtp
             to: option.to, // list of receivers
             subject: option.subject, // Subject line
             text: option.text, // plain text body
