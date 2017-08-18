@@ -16,14 +16,14 @@ var exp = {
           secure: false, // use SSL
           port: 587, // port for secure SMTP
           auth: {
-              user: "<email username>",
-              pass: "<email password>"
+              user: "neo.xactor@outlook.com",
+              pass: "***REMOVED***"
           }
         }
       );
       if(options.length <= 0) reject("You need to have one recipent! none found")
-      var successful = []
-      var errorful = []
+      var successful = 0
+      var errorful = 0
       options.forEach(option=>{
         let mailOptions = {
             from: '"Shahid Kamal 👻" <neo.xactor@outlook.com>', // sender address if initialized through custom smtp
@@ -37,9 +37,9 @@ var exp = {
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
               // add error
-              errorful.push(error)
+              errorful+=1
             }else{
-              successful.push(info)
+              successful+=1
             }
         });
       });

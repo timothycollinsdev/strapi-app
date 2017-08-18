@@ -52,9 +52,9 @@ function buildEmail(obj) {
 module.exports.cron = {
 
   // run this every day at night 0:00
-  "0 0 * * *": function () {
+  "* * * * *": function () {
     // need to get all invoices to filter based on dates.
-    // might need to install manually due to npm issue with strapi 
+    // might need to install manually due to npm issue with strapi
     request(host + "/invoices", function (err , res, body) {
       var body = JSON.parse(body)
       var emailsToSend = []
