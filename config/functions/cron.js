@@ -51,8 +51,8 @@ function buildEmail(obj) {
 
 module.exports.cron = {
 
-  // run this every day at night
-  "* * * * *": function () {
+  // run this every day at night 0:00
+  "0 0 * * *": function () {
     // need to get all invoices to filter based on dates.
     request(host + "/invoices", function (err , res, body) {
       var body = JSON.parse(body)
