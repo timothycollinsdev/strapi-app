@@ -22,6 +22,8 @@ var exp = {
         }
       );
       if(options.length <= 0) reject("You need to have one recipent! none found")
+      var successful = []
+      var errorful = []
       options.forEach(option=>{
         let mailOptions = {
             from: '"Shahid Kamal 👻" <neo.xactor@outlook.com>', // sender address if initialized through custom smtp
@@ -34,13 +36,14 @@ var exp = {
         // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
-                console.log(error);
-                reject(error)
+              // add error
+              errorful.push(error)
+            }else{
+              successful.push(info)
             }
-            // console.log(info);
-            resolve(`Message ${info.messageId} sent: ${info.response}`)
         });
       });
+      resolve(`Sent: ${successful.length}, Error: ${errorful.length}`)
     });
   }
 };
