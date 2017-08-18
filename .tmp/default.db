@@ -1,0 +1,375 @@
+{
+  "data": {
+    "invoices_customerid__user_customerid": [
+      {
+        "user_customerId": 1,
+        "invoices_customerId": 2,
+        "id": 1
+      }
+    ],
+    "email": [],
+    "invoices": [
+      {
+        "customerName": "Shahid Kamal",
+        "invoiceNumber": "15225",
+        "currency": "INR",
+        "amount": "25455",
+        "date": "2017-08-22T18:30:00.000Z",
+        "lang": "en_US",
+        "template": "default",
+        "createdBy": 1,
+        "updatedBy": 1,
+        "id": 3,
+        "createdAt": "2017-08-18T11:16:23.586Z",
+        "updatedAt": "2017-08-18T11:16:41.091Z"
+      }
+    ],
+    "upload": [],
+    "user": [
+      {
+        "username": "shahidkamal",
+        "email": "shahidkamalhimself@gmail.com",
+        "lang": "en_US",
+        "template": "default",
+        "id_ref": "1",
+        "provider": "local",
+        "password": "$2a$10$heQUnfzHDhFrALE25qTSVO4IzQmc1Tg950Fda5JYrWyeQ0REAlzoi",
+        "id": 1,
+        "createdAt": "2017-08-18T11:08:00.976Z",
+        "updatedAt": "2017-08-18T11:08:00.984Z"
+      }
+    ],
+    "invoices_contributors__user_invoices": [
+      {
+        "user_invoices": 1,
+        "invoices_contributors": 3,
+        "id": 3
+      }
+    ],
+    "invoices_mapcustomer__user_mapcustomer": [
+      {
+        "user_mapCustomer": 1,
+        "invoices_mapCustomer": 3,
+        "id": 1
+      }
+    ],
+    "role_users__user_roles": [
+      {
+        "role_users": 1,
+        "user_roles": 1,
+        "id": 1
+      }
+    ]
+  },
+  "schema": {
+    "invoices_customerid__user_customerid": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "invoices_customerId": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "invoices",
+        "on": "id",
+        "via": "user_customerId"
+      },
+      "user_customerId": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "user",
+        "on": "id",
+        "via": "invoices_customerId"
+      }
+    },
+    "email": {
+      "from": {
+        "type": "string"
+      },
+      "to": {
+        "type": "string"
+      },
+      "subject": {
+        "type": "string"
+      },
+      "html": {
+        "type": "string"
+      },
+      "text": {
+        "type": "string"
+      },
+      "sent": {
+        "type": "boolean"
+      },
+      "lang": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "id_ref": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "invoices": {
+      "profitCenter": {
+        "type": "string"
+      },
+      "customerName": {
+        "type": "string"
+      },
+      "invoiceNumber": {
+        "type": "string"
+      },
+      "currency": {
+        "type": "string"
+      },
+      "amount": {
+        "type": "string"
+      },
+      "description": {
+        "type": "string"
+      },
+      "date": {
+        "type": "datetime"
+      },
+      "lang": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "id_ref": {
+        "type": "string"
+      },
+      "createdBy": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "createdBy"
+      },
+      "updatedBy": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "updatedBy"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "upload": {
+      "readable": {
+        "type": "boolean"
+      },
+      "domain": {
+        "type": "boolean"
+      },
+      "truncated": {
+        "type": "boolean"
+      },
+      "fieldname": {
+        "type": "string"
+      },
+      "filename": {
+        "type": "string"
+      },
+      "encoding": {
+        "type": "string"
+      },
+      "transferEncoding": {
+        "type": "string"
+      },
+      "mime": {
+        "type": "string"
+      },
+      "mimeType": {
+        "type": "string"
+      },
+      "originalFilenameFormatted": {
+        "type": "string"
+      },
+      "originalFilename": {
+        "type": "string"
+      },
+      "lang": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "id_ref": {
+        "type": "string"
+      },
+      "createdBy": {
+        "type": "integer",
+        "model": "user",
+        "foreignKey": true,
+        "alias": "createdBy"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "user": {
+      "username": {
+        "type": "string",
+        "unique": true
+      },
+      "email": {
+        "type": "string",
+        "unique": true
+      },
+      "lang": {
+        "type": "string"
+      },
+      "template": {
+        "type": "string"
+      },
+      "id_ref": {
+        "type": "string"
+      },
+      "provider": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "resetPasswordToken": {
+        "type": "string"
+      },
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    },
+    "invoices_contributors__user_invoices": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "invoices_contributors": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "invoices",
+        "on": "id",
+        "via": "user_invoices"
+      },
+      "user_invoices": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "user",
+        "on": "id",
+        "via": "invoices_contributors"
+      }
+    },
+    "invoices_mapcustomer__user_mapcustomer": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "invoices_mapCustomer": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "invoices",
+        "on": "id",
+        "via": "user_mapCustomer"
+      },
+      "user_mapCustomer": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "user",
+        "on": "id",
+        "via": "invoices_mapCustomer"
+      }
+    },
+    "role_users__user_roles": {
+      "id": {
+        "primaryKey": true,
+        "unique": true,
+        "autoIncrement": true,
+        "type": "integer"
+      },
+      "role_users": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "role",
+        "on": "id",
+        "via": "user_roles"
+      },
+      "user_roles": {
+        "type": "integer",
+        "foreignKey": true,
+        "references": "user",
+        "on": "id",
+        "via": "role_users"
+      }
+    }
+  },
+  "counters": {
+    "email": {},
+    "upload": {},
+    "user": {
+      "id": 1
+    },
+    "role_users__user_roles": {
+      "id": 1
+    },
+    "invoices": {
+      "id": 3
+    },
+    "invoices_contributors__user_invoices": {
+      "id": 3
+    },
+    "invoices_customerid__user_customerid": {
+      "id": 1
+    },
+    "invoices_mapcustomer__user_mapcustomer": {
+      "id": 1
+    }
+  }
+}
