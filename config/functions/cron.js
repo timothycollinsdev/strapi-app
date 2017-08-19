@@ -52,9 +52,9 @@ function buildEmail(obj) {
 module.exports.cron = {
 
   // run this every day at night 0:00
-  "* * * * *": function () {
+  "0 0 * * *": function () {
     // need to get all invoices to filter based on dates.
-    
+
     Invoices.find({}).exec(function (err, body) {
       var emailsToSend = []
       body.forEach(item=>{

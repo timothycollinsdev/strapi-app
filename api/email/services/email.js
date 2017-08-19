@@ -17,7 +17,7 @@ var exp = {
           port: 587, // port for secure SMTP
           auth: {
               user: "neo.xactor@outlook.com",
-              pass: "<email password>"
+              pass: "<password>"
           }
         }
       );
@@ -37,7 +37,6 @@ var exp = {
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
               // add error
-              console.log("emailService(): ", error)
               errorful+=1
             }else{
               successful+=1
