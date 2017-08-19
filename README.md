@@ -1,5 +1,7 @@
 
-## Important
+# Instructions
 
-Need to install `request` module manually
-[issue#67](https://github.com/strapi/strapi/issues/67)
+1. `git clone https://github.com/sh4hidkh4n/strapi-app`
+2. `cd strapi-app`
+3. `npm install`
+4. `strapi start`
